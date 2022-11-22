@@ -10,7 +10,7 @@ interface BoardProps {
 export const BoardComponent: FC<BoardProps> = ({board, setBoard}) => {
     return (
         <div className={'board'}>
-            {board.cell.map((row, index) =>
+            {board.cells.map((row, index) =>
                 <Fragment key={index}>
                     {row.map(cell =>
                         <CellComponent

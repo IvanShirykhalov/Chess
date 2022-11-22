@@ -7,13 +7,14 @@ function App() {
 
     const [board, setBoard] = useState(new Board())
 
-    useEffect(()=>{
+    useEffect(() => {
         restart()
-    },[])
+    }, [])
 
-    function restart(){
+    function restart() {
         const newBoard = new Board()
         newBoard.initCells()
+        newBoard.addFigures()
         setBoard(newBoard)
     }
 
