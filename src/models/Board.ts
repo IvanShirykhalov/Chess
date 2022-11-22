@@ -34,8 +34,10 @@ export class Board {
         }
     }
 
-    public getCopyBoard() {
-
+    public getCopyBoard(): Board {
+        const newBoard = new Board()
+        newBoard.cells = this.cells
+        return newBoard
     }
 
     public getCell(x: number, y: number) {

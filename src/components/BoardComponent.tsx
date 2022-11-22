@@ -1,4 +1,4 @@
-import React, {FC, Fragment, useState} from 'react';
+import React, {FC, Fragment, useEffect, useState} from 'react';
 import {Board} from "../models/Board";
 import {CellComponent} from "./CellComponent";
 import {Cell} from "../models/Cell";
@@ -17,6 +17,10 @@ export const BoardComponent: FC<BoardProps> = ({board, setBoard}) => {
             setSelectedCell(cell)
         }
     }
+
+    useEffect(() => {
+        highlightCells()
+    }, [selectedCell])
 
     const highlightCells = () => {
         board.highlightCells(selectedCell)
